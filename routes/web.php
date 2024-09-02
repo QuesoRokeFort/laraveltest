@@ -3,9 +3,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/home', [AuthManager::class,'home'])->name('home');
+Route::get('/', [AuthManager::class, 'login'])->name('login');
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login',[AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('/signup', [AuthManager::class, 'signup'])->name('signup');

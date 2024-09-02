@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Session;
 
 class AuthManager extends Controller
 {
+    function home(){
+        if(Auth::check()){
+            return view('welcome');
+        }
+        return redirect(route('login'));
+    }
     function login(){
         if(Auth::check()){
             return redirect(route('home'));
