@@ -9,6 +9,6 @@ export default defineConfig({
         }),
     ],
     build: {
-        outDir: 'public/build', // Ensure the build output is directed here
+        outDir: 'dist', // Ensure the build output is directed here
     }
 });
